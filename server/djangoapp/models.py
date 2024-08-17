@@ -26,7 +26,7 @@ class CarModel(models.Model):
     year = models.IntegerField(
         default=2023,
         validators=[
-            MaxValueValidator(2023), 
+            MaxValueValidator(2023),
             MinValueValidator(2015)
         ]
     )
@@ -34,4 +34,3 @@ class CarModel(models.Model):
     # Other fields as needed
     def __str__(self):
         return self.name  # Return the name as the string representation
-
