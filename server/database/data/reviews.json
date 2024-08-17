@@ -549,6 +549,17 @@
       "car_make": "Cadillac",
       "car_model": "DeVille",
       "car_year": 1995
+    },
+    {
+      "id": 51,
+      "name": "Andy",
+      "dealership": 2,
+      "review": "Absolutely terrible",
+      "purchase": false,
+      "purchase_date": "05/10/2020",
+      "car_make": "Cadillac",
+      "car_model": "DeVille",
+      "car_year": 2019
     }
   ]
 }
