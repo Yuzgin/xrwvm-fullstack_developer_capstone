@@ -79,17 +79,12 @@ app.get('/fetchDealers/:state', async (req, res) => {
 // Express route to fetch dealer by a particular id
 app.get('/fetchDealer/:id', async (req, res) => {
     try {
-        const dealerId = parseInt(req.params.id, 10); // Convert the id to a number
-        const dealer = await Dealerships.findOne({ id: dealerId }); // Query by id
-        if (dealer) {
-            res.json(dealer);
-        } else {
-            res.status(404).send({ error: 'Dealer not found' });
-        }
+      const documents = await Dealerships.find({ id: req.params.id });
+      res.json(documents);
     } catch (error) {
-        res.status(500).send({ error: 'Error fetching dealership' });
+      res.status(500).json({ error: 'Error fetching dealers by ID' });
     }
-});
+  });
 
 //Express route to insert review
 app.post('/insert_review', express.raw({ type: '*/*' }), async (req, res) => {
