@@ -20,9 +20,9 @@ logger = logging.getLogger(__name__)
 # Create your views here.
 def add_review(request):
     if not request.user.is_anonymous:
-        data = json.loads(request.body) # <-- added
+        data = json.loads(request.body)  # <-- added
         try:
-            response = post_review(data) # <-- added
+            response = post_review(data)  # <-- added
             return JsonResponse({"status": 200, "response": response})
         except Exception as e:
             # If an error occurs, return a JsonResponse with error details
@@ -127,6 +127,7 @@ def get_dealer_reviews(request, dealer_id):
         return JsonResponse({"status": 200, "reviews": reviews})
     else:
         return JsonResponse({"status": 400, "message": "Bad Request"})
+
 
 def get_cars(request):
     count = CarMake.objects.filter().count()
